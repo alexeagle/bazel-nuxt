@@ -79,5 +79,9 @@ export default {
 			// config.resolve.modules = [ 'external/npm/node_modules' ];
 			// config.resolve.symlinks = true;
 		}
-	}
+	},
+    
+	// Workaround https://cmty.app/nuxt/nuxt.js/issues/c9861
+	// Support a --buildDir option to the nuxt CLI
+	buildDir: process.argv.find(s => s.startsWith('--buildDir=')).substr('--buildDir='.length)
 };
